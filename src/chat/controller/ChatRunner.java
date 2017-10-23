@@ -1,4 +1,4 @@
-package controller;
+package chat.controller;
 
 import view.PopupDisplay;
 
@@ -6,7 +6,7 @@ public class ChatRunner
 {
 	public static void main(String [] args)
 	{
-		chatbotController = new ChatController();
+		ChatController = new ChatController();
 		app.start();
 		//PopupDisplay test = new PopupDisplay();
 		//test.displayText("words go here");
