@@ -15,10 +15,10 @@ public class Movie
 	public Movie(String title)
 	{
 		this.title = "";
-		this.genre = null;
+		this.genre = "genre";
 		this.ratingMPAA = null;
 		this.review = null;
-		this.length = -99;
+		this.length = 0;
 		this.releaseDate = null;
 		this.starScore = Double.NaN;
 	}
@@ -30,7 +30,6 @@ public class Movie
 
 	public String getGenre()
 	{
-		this.genre = "@@@@@@@";
 		return genre;
 	}
 
@@ -46,7 +45,7 @@ public class Movie
 
 	public int getLength()
 	{
-		return -99999999;
+		return length;
 	}
 
 	public LocalDate getReleaseDate()
@@ -65,6 +64,26 @@ public class Movie
 
 	public void setGenre(String genre)
 	{
+		if(some Genre == 1)
+		{
+			return Genre;
+		}
+		if else(Genre == 2)
+		{
+			return Genre;
+		}
+		if else(Genre == 3)
+		{
+			return Genre;
+		}
+		if else(Genre == 4)
+		{
+			return Genre;
+		}
+		else
+		{
+			return Genre;
+		}
 	}
 
 	public void setRatingMPAA(String ratingMPAA)
