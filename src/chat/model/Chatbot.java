@@ -20,21 +20,23 @@ public class Chatbot
 	
 	public Chatbot(String username)
 	{
-		this.movieList = new ArrayList<Movie>(3);
+		this.movieList = null;
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = null;
 		this.currentTime = null;
-		this.questions = null;
+		this.questions = new String [3];
 		this.username = username;
 		this.content = null;
 		this.intro = null;
-		this.topics = null;
+		this.topics = new String [3];
 		this.verbs = new String [4];
 		this.followUps = null;
 	
 	buildVerbs();
 	buildShoppingList();
 	buildMovieList();
+	buildQuestions();
+	buildTopics();
 	
 	}
 	private void buildVerbs()
@@ -57,6 +59,12 @@ public class Chatbot
 		shoppingList.add("veggies");
 		shoppingList.add("protein");
 	}
+	private void buildTopics()
+	{
+		topics[0] = ("Dogs");
+		topics[1] = ("People");
+		topics[2] = ("Aliens");
+	}
 	
 	private void buildCuteAnimals()
 	{
@@ -65,7 +73,9 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		
+		questions[0] = ("Who are you?");
+		questions[1] = ("Who are people?");
+		questions[2] = ("Do you hate Cats?");
 	}
 	
 	public String processConversation(String input)
@@ -95,7 +105,7 @@ public class Chatbot
 	private String buildChatbot()
 	{
 		String response = "I ";
-		int random = (int) (Math.random() * verbs.length;
+		int random = (int) (Math.random() * verbs.length);
 		
 		response += verbs[random];
 		
@@ -143,6 +153,10 @@ public class Chatbot
 
 	public boolean quitChecker(String exitString)
 	{
+		if (exitString.equalsIgnoreCase("quit"))
+		{
+			return true;
+		}
 		return false;
 	}
 
