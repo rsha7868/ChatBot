@@ -20,7 +20,7 @@ public class Chatbot
 	
 	public Chatbot(String username)
 	{
-		this.movieList = new ArrayList<Movie>();
+		this.movieList = new ArrayList<Movie>(3);
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = null;
 		this.currentTime = null;
@@ -34,6 +34,7 @@ public class Chatbot
 	
 	buildVerbs();
 	buildShoppingList();
+	buildMovieList();
 	
 	}
 	private void buildVerbs()
@@ -69,7 +70,11 @@ public class Chatbot
 	
 	public String processConversation(String input)
 	{
-		return null;
+		String chatbotResponse ="";
+		chatbotResponse += "You said:" + "/n" + input + "/n";
+		
+		chatbotResponse += buildChatbotResponse();
+		return chatbotResponse;
 	}
 	
 	public boolean lengthChecker(String input)
@@ -85,6 +90,20 @@ public class Chatbot
 		}
 		
 		return validLength;
+	}
+	
+	private String buildChatbot()
+	{
+		String response = "I ";
+		int random = (int) (Math.random() * verbs.length;
+		
+		response += verbs[random];
+		
+		random = (int) (Math.random() * topics.length);
+		response += "" + topics[random] + "./n";
+		
+		random = (int) (Math.random() * questions.length);
+		response += questions[random];
 	}
 	
 	public boolean htmlTagChecker(String input)
