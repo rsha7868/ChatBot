@@ -160,8 +160,52 @@ public class Chatbot
 		return false;
 	}
 
-	public boolean keyboardMashChecker(String sample)
+	public boolean keyboardMashChecker(String input)
 	{
+		if (input.contains("S.D.F."))
+		{
+			return false;
+		}
+		else if (input.contains("derf"))
+		{
+			return false;
+		}
+		else if (input.contains("sdf"))
+		{
+			return true;
+		}
+		else if (input.contains("SDF"))
+		{
+			return true;
+		}
+		else if (input.contains("dfg"))
+		{
+			return true;
+		}
+		else if (input.contains("cvb"))
+		{
+			return true;
+		}
+		else if (input.contains(",./"))
+		{
+			return true;
+		}
+		else if (input.contains("kjh"))
+		{
+			return true;
+		}
+		else if (input.contains("DFG"))
+		{
+			return true;
+		}
+		else if (input.contains("CVB"))
+		{
+			return true;
+		}
+		else if (input.contains("KJH"))
+		{
+			return true;
+		}
 		return false;
 	}
 	

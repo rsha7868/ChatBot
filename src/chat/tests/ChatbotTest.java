@@ -1,4 +1,4 @@
-package tools.tests;
+package chat.tests;
 
 import static org.junit.Assert.*;
 
@@ -168,7 +168,7 @@ public class ChatbotTest
 			{
 				otterCount += 1;
 			}
-			if (cute.toUpperCase().contains("floofer"))
+			if (cute.toUpperCase().contains("FLOOFER"))
 			{
 				flooferCount += 1;
 			}
