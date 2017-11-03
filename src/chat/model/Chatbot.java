@@ -42,17 +42,17 @@ public class Chatbot
 	}
 	private void buildVerbs()
 	{
-		verbs[0] = "like";
-		verbs[1] = "dislike";
-		verbs[2] = "am ambivalent about";
-		verbs[3] = "am thinking about";
+		verbs[0] = "like ";
+		verbs[1] = "dislike ";
+		verbs[2] = "am ambivalent about ";
+		verbs[3] = "am thinking about ";
 	}
-	private void buildMovieList()
-	{
+	//private void buildMovieList()
+	//{
 		//movieList.add("Billy");
 		//movieList.add("Billy 2");
 		//movieList.add("Billy 3");
-	}
+	//}
 	
 	private void buildShoppingList()
 	{
@@ -62,9 +62,9 @@ public class Chatbot
 	}
 	private void buildTopics()
 	{
-		topics[0] = ("Dogs");
-		topics[1] = ("People");
-		topics[2] = ("Aliens");
+		topics[0] = ("dogs");
+		topics[1] = ("people");
+		topics[2] = ("aliens");
 	}
 	
 	private void buildCuteAnimals()
@@ -82,7 +82,7 @@ public class Chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse ="";
-		chatbotResponse += "You said:" + "/n" + input + "/n";
+		chatbotResponse += "You said:" + "\n" + input + "\n";
 		
 		chatbotResponse += buildChatbotResponse();
 		return chatbotResponse;
@@ -111,7 +111,7 @@ public class Chatbot
 		response += verbs[random];
 		
 		random = (int) (Math.random() * topics.length);
-		response += "" + topics[random] + "./n";
+		response += "" + topics[random] + ".\n";
 		
 		random = (int) (Math.random() * questions.length);
 		response += questions[random];
