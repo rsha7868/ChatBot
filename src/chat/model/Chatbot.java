@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Chatbot
 {
-	private List<Movie> movieList;
+	//private List<Movie> movieList;
 	private List<String> shoppingList;
 	private List<String> cuteAnimalMemes;
 	private String [] verbs;
@@ -20,7 +20,7 @@ public class Chatbot
 	
 	public Chatbot(String username)
 	{
-		this.movieList = null;
+		//this.movieList = null;
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = null;
 		this.currentTime = null;
@@ -34,9 +34,10 @@ public class Chatbot
 	
 	buildVerbs();
 	buildShoppingList();
-	buildMovieList();
+	//buildMovieList();
 	buildQuestions();
 	buildTopics();
+	buildChatbotResponse();
 	
 	}
 	private void buildVerbs()
@@ -48,9 +49,9 @@ public class Chatbot
 	}
 	private void buildMovieList()
 	{
-		movieList.add("Billy");
-		movieList.add("Billy 2");
-		movieList.add("Billy 3");
+		//movieList.add("Billy");
+		//movieList.add("Billy 2");
+		//movieList.add("Billy 3");
 	}
 	
 	private void buildShoppingList()
@@ -102,7 +103,7 @@ public class Chatbot
 		return validLength;
 	}
 	
-	private String buildChatbot()
+	private String buildChatbotResponse()
 	{
 		String response = "I ";
 		int random = (int) (Math.random() * verbs.length);
@@ -114,6 +115,8 @@ public class Chatbot
 		
 		random = (int) (Math.random() * questions.length);
 		response += questions[random];
+		
+		return response;
 	}
 	
 	public boolean htmlTagChecker(String input)
@@ -209,10 +212,10 @@ public class Chatbot
 		return false;
 	}
 	
-	public List<Movie> getMovieList()
-	{
-		return movieList;
-	}
+	//public List<Movie> getMovieList()
+	//{
+		//return movieList;
+	//}
 	
 	public List<String> getShoppingList()
 	{

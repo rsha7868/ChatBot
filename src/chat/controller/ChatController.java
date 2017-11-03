@@ -28,7 +28,7 @@ public class ChatController
 	{
 		String chatbotSays = "";
 		
-		chatbotSays += chatbot.proccessConversation(chat);
+		chatbotSays += chatbot.processConversation(chat);
 		
 		return chatbotSays;
 	}
