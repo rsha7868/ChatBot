@@ -42,10 +42,10 @@ public class Chatbot
 	}
 	private void buildVerbs()
 	{
-		verbs[0] = "like ";
-		verbs[1] = "dislike ";
-		verbs[2] = "am ambivalent about ";
-		verbs[3] = "am thinking about ";
+		verbs[0] = "like";
+		verbs[1] = "dislike";
+		verbs[2] = "am ambivalent about";
+		verbs[3] = "am thinking about";
 	}
 	//private void buildMovieList()
 	//{
