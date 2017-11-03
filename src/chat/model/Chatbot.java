@@ -149,6 +149,7 @@ public class Chatbot
 //		{
 //		return false;	
 //		}
+		//the data of this file shows how the shopping list checks the data...From the begginging and the end. From one list to a anouther.
 		for (int index = 0; 1 < shoppingList.size(); index++)
 		{
 			if (shoppingItem.contains(shoppingList.get(index)))
@@ -157,10 +158,6 @@ public class Chatbot
 			}
 		}
 		return false;
-		
-		
-		
-		
 	}
 	
 	public boolean movieTitleChecker(String title)
