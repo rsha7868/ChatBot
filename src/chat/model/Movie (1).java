@@ -35,7 +35,7 @@ public class Movie
 
 	public String getRatingMPAA()
 	{
-		return null;
+		return ratingMPAA;
 	}
 
 	public String getReview()
@@ -64,26 +64,7 @@ public class Movie
 
 	public void setGenre(String genre)
 	{
-		if(some Genre == 1)
-		{
-			return Genre;
-		}
-		if else(Genre == 2)
-		{
-			return Genre;
-		}
-		if else(Genre == 3)
-		{
-			return Genre;
-		}
-		if else(Genre == 4)
-		{
-			return Genre;
-		}
-		else
-		{
-			return Genre;
-		}
+		this.genre = genre;
 	}
 
 	public void setRatingMPAA(String ratingMPAA)
