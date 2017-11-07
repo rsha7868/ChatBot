@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Chatbot
 {
-	//private List<Movie> movieList;
+	private List<String> movieList;
 	private List<String> shoppingList;
 	private List<String> cuteAnimalMemes;
 	private String [] verbs;
@@ -20,7 +20,7 @@ public class Chatbot
 	
 	public Chatbot(String username)
 	{
-		//this.movieList = null;
+		this.movieList = new ArrayList<String>();
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = null;
 		this.currentTime = null;
@@ -34,7 +34,7 @@ public class Chatbot
 	
 	buildVerbs();
 	buildShoppingList();
-	//buildMovieList();
+	buildMovieList();
 	buildQuestions();
 	buildTopics();
 	buildChatbotResponse();
@@ -47,12 +47,12 @@ public class Chatbot
 		verbs[2] = "am ambivalent about";
 		verbs[3] = "am thinking about";
 	}
-	//private void buildMovieList()
-	//{
-		//movieList.add("Billy");
-		//movieList.add("Billy 2");
-		//movieList.add("Billy 3");
-	//}
+	private void buildMovieList()
+	{
+		movieList.add("");
+		movieList.add("Spiderman");
+		movieList.add("Hidden Figures");
+	}
 	
 	private void buildShoppingList()
 	{
