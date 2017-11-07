@@ -22,7 +22,7 @@ public class Chatbot
 	{
 		this.movieList = new ArrayList<String>();
 		this.shoppingList = new ArrayList<String>();
-		this.cuteAnimalMemes = null;
+		this.cuteAnimalMemes = new ArrayList<String>();
 		this.currentTime = null;
 		this.questions = new String [3];
 		this.username = username;
@@ -38,7 +38,7 @@ public class Chatbot
 	buildQuestions();
 	buildTopics();
 	buildChatbotResponse();
-	
+	buildCuteAnimals();
 	}
 	private void buildVerbs()
 	{
@@ -49,7 +49,6 @@ public class Chatbot
 	}
 	private void buildMovieList()
 	{
-		movieList.add("");
 		movieList.add("Spiderman");
 		movieList.add("Hidden Figures");
 	}
@@ -69,7 +68,9 @@ public class Chatbot
 	
 	private void buildCuteAnimals()
 	{
-		
+		cuteanimalsList.add("pupper");
+		cuteanimalsList.add("otter");
+		cuteanimalsList.add("kittie");
 	}
 	
 	private void buildQuestions()
@@ -162,7 +163,18 @@ public class Chatbot
 	
 	public boolean movieTitleChecker(String title)
 	{
-		return false;
+		if (title.contains("Spiderman"))
+		{
+			return true;
+		}
+		else if (title.contains("Hidden Figures"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	
 	public boolean movieGenreChecker(String genre)
@@ -181,15 +193,8 @@ public class Chatbot
 
 	public boolean keyboardMashChecker(String input)
 	{
-		if (input.contains("S.D.F."))
-		{
-			return false;
-		}
-		else if (input.contains("derf"))
-		{
-			return false;
-		}
-		else if (input.contains("sdf"))
+		
+		if (input.contains("sdf"))
 		{
 			return true;
 		}
