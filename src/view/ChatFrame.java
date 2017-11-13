@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 public class ChatFrame extends JFrame
 {
 	private ChatbotController appController;
-	private Cahtbot appPane;
+	private Chatbot appPane;
 	
 	public ChatFrame(ChatbotController appController)
 	{
