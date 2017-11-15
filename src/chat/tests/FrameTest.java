@@ -6,9 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import chat.controller.ChatbotController;
-import chat.view.ChatFrame;
-import chat.view.ChatPanel;
+import chat.controller.ChatController;
+import view.ChatFrame;
+import view.ChatPanel;
 
 public class FrameTest
 {
@@ -17,7 +17,7 @@ public class FrameTest
 	@Before
 	public void setUp() throws Exception
 	{
-		testedFrame = new ChatFrame(new ChatbotController());
+		testedFrame = new ChatFrame(new ChatController());
 	}
 
 	@After
