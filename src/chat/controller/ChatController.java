@@ -1,5 +1,5 @@
 package chat.controller;
-
+import view.ChatFrame;
 import chat.model.Chatbot;
 import view.PopupDisplay;
 
@@ -7,6 +7,7 @@ public class ChatController
 	{
 	private Chatbot chatbot;
 	private PopupDisplay display;
+	private ChatFrame appFrame;
 	
 	
 	public ChatController()
