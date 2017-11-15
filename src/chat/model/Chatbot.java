@@ -49,8 +49,8 @@ public class Chatbot
 	}
 	private void buildMovieList()
 	{
-		movieList.add("Spiderman");
-		movieList.add("Hidden Figures");
+//		movieList.add("Spiderman");
+//		movieList.add("Hidden Figures");
 	}
 	
 	private void buildShoppingList()
