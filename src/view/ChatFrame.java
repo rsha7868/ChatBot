@@ -1,25 +1,25 @@
 package view;
 
-import chat.controllor.ChatbotController;
+import chat.controller.ChatController;
 import javax.swing.JFrame;
 
 
 
 public class ChatFrame extends JFrame
 {
-	private ChatbotController appController;
-	private Chatbot appPane;
+	private ChatController appController;
+	//private ChatPanel appPanel;
 	
-	public ChatFrame(ChatbotController appController)
+	public ChatFrame(ChatController appController)
 	{
 		super();
 		this.appController = appController;
-		appPane = new ChatPanel(appController);
+		//appPanel = new ChatPanel(appController);
 		setupFrame();
 	}
 	private void setupFrame()
 	{
-		this.setContentPane(appPane);
+		//this.setContentPane(appPanel);
 		this.setTitle("Chatting with the chatbot");
 		this.setResizable(false);
 		this.setSize(600, 600);
