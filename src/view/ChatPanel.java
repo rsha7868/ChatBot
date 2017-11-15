@@ -58,6 +58,6 @@ public class ChatPanel extends JPanel
 	}
 	public void setupChatFrame()
 	{
-		
+		for()
 	}
 }
