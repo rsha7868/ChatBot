@@ -14,6 +14,7 @@ public class ChatbotController
 {
 		chatbot = new Chatbot("Ryan Sharp");
 		display = new PopupDisplay();
+		appFrame = new ChatFrame(this);
 	}
 	public void start()
 	{

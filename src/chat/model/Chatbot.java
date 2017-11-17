@@ -22,7 +22,7 @@ public class Chatbot
 	{
 		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
-		//this.cuteAnimalMemes = new ArrayList<String>();
+		this.cuteAnimalMemes = new ArrayList<String>();
 		this.currentTime = null;
 		this.questions = new String [3];
 		this.username = username;
@@ -38,7 +38,7 @@ public class Chatbot
 	buildQuestions();
 	buildTopics();
 	buildChatbotResponse();
-	//buildCuteAnimalsMemes();
+	buildCuteAnimalsMemes();
 	}
 	private void buildVerbs()
 	{
@@ -66,12 +66,12 @@ public class Chatbot
 		topics[2] = ("aliens");
 	}
 	
-//	private void buildCuteAnimalsMemes()
-//	{
-//		cuteAnimalsMemesList.add("pupper");
-//		cuteAnimalsMemesList.add("otter");
-//		cuteAnimalsMemesList.add("kittie");
-//	}
+	private void buildCuteAnimalsMemes()
+	{
+		cuteAnimalsMemesList.add("pupper");
+		cuteAnimalsMemesList.add("otter");
+		cuteAnimalsMemesList.add("kittie");
+	}
 	
 	private void buildQuestions()
 	{
