@@ -1,16 +1,16 @@
 package chat.controller;
-import view.ChatFrame;
 import chat.model.Chatbot;
-import view.PopupDisplay;
+import chat.view.ChatFrame;
+import chat.view.PopupDisplay;
 
-public class ChatController
+public class ChatbotController
 	{
 	private Chatbot chatbot;
 	private PopupDisplay display;
 	private ChatFrame appFrame;
 	
 	
-	public ChatController()
+	public ChatbotController()
 {
 		chatbot = new Chatbot("Ryan Sharp");
 		display = new PopupDisplay();

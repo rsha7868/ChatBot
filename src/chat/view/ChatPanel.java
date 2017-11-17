@@ -1,21 +1,21 @@
-package view;
+package chat.view;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.JTextArea;
-import chat.controller.ChatController;
+import chat.controller.ChatbotController;
 import java.awt.Color;
 
 public class ChatPanel extends JPanel
 {
-	private ChatController appController;
+	private ChatbotController appController;
 	private JButton chatButton;
 	private JTextField inputField;
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
 	
-	public ChatPanel(ChatController appController)
+	public ChatPanel(ChatbotController appController)
 	{
 		//Initialize GUI data members
 		super();
@@ -58,6 +58,6 @@ public class ChatPanel extends JPanel
 	}
 	public void setupChatFrame()
 	{
-		for()
+		
 	}
 }

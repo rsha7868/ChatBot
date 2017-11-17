@@ -6,9 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import chat.controller.ChatController;
-import view.ChatFrame;
-import view.ChatPanel;
+import chat.controller.ChatbotController;
+import chat.view.ChatFrame;
+import chat.view.ChatPanel;
 
 public class FrameTest
 {
@@ -17,7 +17,7 @@ public class FrameTest
 	@Before
 	public void setUp() throws Exception
 	{
-		testedFrame = new ChatFrame(new ChatController());
+		testedFrame = new ChatFrame(new ChatbotController());
 	}
 
 	@After
@@ -30,7 +30,7 @@ public class FrameTest
 	public void testChatFrame()
 	{
 		assertNotNull("Controller data member needs to be initialized", testedFrame.getappController());
-		assertTrue("Controller must be an instance of ChatbotController", testedFrame.getappController() instanceof ChatController);
+		assertTrue("Controller must be an instance of ChatbotController", testedFrame.getappController() instanceof ChatbotController);
 	}
 	
 	@Test
