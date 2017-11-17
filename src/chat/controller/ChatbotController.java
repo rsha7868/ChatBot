@@ -26,6 +26,22 @@ public class ChatbotController
 //		response = display.collectResponse(response);
 //	}
 	}
+	public String interactWithChatbot(String input)
+	{
+		String chatbotSays = "";
+		if(chatbot.quitChecker(input))
+		{
+			close();
+		}
+
+		chatbotSays += chatbot.processConversation(input);
+		return chatbotSays;
+	}
+	private void close()
+	{
+		display.displayText("Goodbye");
+		System.exit(0);
+	}
 	private String popupChat(String chat)
 	{
 		String chatbotSays = "";
@@ -34,10 +50,4 @@ public class ChatbotController
 		
 		return chatbotSays;
 	}
-	public interactWithChatbot(String input)
-	{
-		String chatbotSays = "";
-		chatbotSays.processConversion(input)
-		return chatbotSays
 	}
-}
