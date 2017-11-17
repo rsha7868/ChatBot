@@ -17,13 +17,14 @@ public class ChatbotController
 	}
 	public void start()
 	{
-	String response = display.collectResponse("What do you want to talk about?");
+	display.displayText("welcome to Chatbot");
 	
-	while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
-	{
-		response = popupChat(response);
-		response = display.collectResponse(response);
-	}
+	
+//	while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
+//	{
+//		response = popupChat(response);
+//		response = display.collectResponse(response);
+//	}
 	}
 	private String popupChat(String chat)
 	{
@@ -32,5 +33,11 @@ public class ChatbotController
 		chatbotSays += chatbot.processConversation(chat);
 		
 		return chatbotSays;
+	}
+	public interactWithChatbot(String input)
+	{
+		String chatbotSays = "";
+		chatbotSays.processConversion(input)
+		return chatbotSays
 	}
 }

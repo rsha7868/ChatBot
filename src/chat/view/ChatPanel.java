@@ -9,6 +9,9 @@ import java.awt.Color;
 
 public class ChatPanel extends JPanel
 {
+	/**
+	 * The extend values.
+	 */
 	private ChatbotController appController;
 	private JButton chatButton;
 	private JTextField inputField;
@@ -17,6 +20,9 @@ public class ChatPanel extends JPanel
 	
 	public ChatPanel(ChatbotController appController)
 	{
+		/**
+		 * Chatbot's new frame of the GUI setupFrame.
+		 */
 		//Initialize GUI data members
 		super();
 		chatButton = new JButton("chat");
@@ -44,6 +50,9 @@ public class ChatPanel extends JPanel
 	}
 	public void setupLayout()
 	{
+		/**
+		 * The are of the 
+		 */
 		appLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, chatButton);
 		appLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, chatArea);
 		appLayout.putConstraint(SpringLayout.NORTH, chatArea, 20, SpringLayout.NORTH, this);

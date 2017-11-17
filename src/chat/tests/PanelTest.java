@@ -35,6 +35,9 @@ public class PanelTest
 	@Test
 	public void testSetupListeners()
 	{
+		
+		
+		 
 		assertTrue("Minimum components not met", testedPanel.getComponents().length > 5);
 		for(Component currentGUIComponent : testedPanel.getComponents())
 		{

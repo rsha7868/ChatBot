@@ -20,6 +20,9 @@ public class PopupDisplay
 	 */
 	public PopupDisplay()
 	{
+		/**
+		 * Trying to fix the image so it becomes fixed from the error of unknown. It might be cause by a invisable break. But I don't Know. 
+		 */
 		icon = new ImageIcon(getClass().getResource("images/chatbot.png"));
 		windowTitle = "Chatbot says";
 	}
