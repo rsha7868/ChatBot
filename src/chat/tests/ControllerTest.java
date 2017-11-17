@@ -62,7 +62,7 @@ public class ControllerTest
 		assertNotNull("Popup must be initialized.", testedController.getDisplay());
 		assertTrue("Popup display type should be used.", testedController.getDisplay() instanceof PopupDisplay);
 	}
-	
+	@Test
 	public void testGetChatFrame()
 	{
 		assertNotNull("ChatFrame must be initialized.", testedController.getChatFrame());
