@@ -146,7 +146,7 @@ public class Chatbot
 	
 	public boolean cuteAnimalMemeChecker(String input)
 	{
-		return false;
+		for(int i = 1; )
 	}
 	
 	public boolean shoppingListChecker(String shoppingItem)
