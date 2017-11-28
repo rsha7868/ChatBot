@@ -150,7 +150,22 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
+		if(input.contains("<") || !input.contains(">"))
+		{
+			return false;
+		}
+		else if(input.contains("< >"))
+		{
+			return false;
+		}
+		else if(input.contains("< >") && input.contains("<  >"))
+		{
+			return true;
+		}
+		else
+		{
 		return false;
+		}
 	}
 	
 	public boolean userNameChecker(String input)
@@ -163,10 +178,13 @@ public class Chatbot
 		return false;
 	}
 	
-//	public boolean cuteAnimalMemeChecker(String input)
-//	{
-//		for(int i = 1; )
-//	}
+	public boolean cuteAnimalMemeChecker(String input)
+	{
+		for(int i = 1; i < 3; i++)
+		{
+			
+		}
+	}
 	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
