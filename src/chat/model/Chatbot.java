@@ -121,13 +121,32 @@ public class Chatbot
 		
 			if (random % 2 == 0)
 			{
-				random = (int) (Math.random() * movieList.size());
-				//response += "\n" + movieList.get(random).getTitle() + " is a great movie!";
+				random = (int) (Math.random() * shoppingList.size());
+				response += "\n" + shoppingList.get(random) + " is great food!";
+			}
+			int followup = (int) (Math.random() * 5);
+			
+			switch (followup)
+			{
+			case 0:
+				response += followUps[0] + "\n";
+				break;
+			case 3:
+				response += followUps[1] + "\n";
+			case 1:
+				response += followUps[2] + "\n";
+				break;
+				default:
+					response += followUps[3] + "\n";
+					response += followUps[4] + "\n";
 			}
 		
 		
 		return response;
 	}
+	
+	
+	
 	
 	public boolean htmlTagChecker(String input)
 	{
@@ -144,10 +163,10 @@ public class Chatbot
 		return false;
 	}
 	
-	public boolean cuteAnimalMemeChecker(String input)
-	{
-		for(int i = 1; )
-	}
+//	public boolean cuteAnimalMemeChecker(String input)
+//	{
+//		for(int i = 1; )
+//	}
 	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
