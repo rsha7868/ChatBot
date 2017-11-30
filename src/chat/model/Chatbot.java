@@ -38,7 +38,7 @@ public class Chatbot
 	buildQuestions();
 	buildTopics();
 	buildChatbotResponse();
-	buildCuteAnimalMemes();
+	buildcuteAnimalMemes();
 	}
 	private void buildVerbs()
 	{
@@ -66,7 +66,7 @@ public class Chatbot
 		topics[2] = ("aliens");
 	}
 	
-	private void buildCuteAnimalMemes()
+	private void buildcuteAnimalMemes()
 	{
 		cuteAnimalMemes.add("pupper");
 		cuteAnimalMemes.add("otter");
@@ -180,9 +180,14 @@ public class Chatbot
 	
 	public boolean cuteAnimalMemeChecker(String input)
 	{
-		for(int i = 1; i < 3; i++)
+		for(int index = 0; index < cuteAnimalMemes.size(); index++)
 		{
-			
+			if(cuteAnimalMemes.contains(cuteAnimalMemes.get(index))
+					{
+						return true;
+					}
+			else if()
+			return false;
 		}
 	}
 	
