@@ -150,21 +150,11 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
-		if(input.contains("<") || !input.contains(">"))
+		
+		boolean containsHTML = false;
+		if(input == null || !input.contains("<"))
 		{
-			return false;
-		}
-		else if(input.contains("< >"))
-		{
-			return false;
-		}
-		else if(input.contains("< >") && input.contains("<  >"))
-		{
-			return true;
-		}
-		else
-		{
-		return false;
+			return containsHTML
 		}
 	}
 	
