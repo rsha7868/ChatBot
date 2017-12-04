@@ -38,8 +38,6 @@ public class ChatPanel extends JPanel
 		inputField = new JTextField(20);
 		appLayout  = new SpringLayout();
 		infoLabel = new JLabel("Type to chat with chatbot");
-		appLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, inputField);
-		appLayout.putConstraint(SpringLayout.SOUTH, infoLabel, -6, SpringLayout.NORTH, inputField);
 		chatScrollPane = new JScrollPane();
 		checkerButton = new JButton("Check contents");
 					
@@ -61,7 +59,7 @@ public class ChatPanel extends JPanel
 		this.add(infoLabel);
 		this.add(chatScrollPane);
 	}
-	public void setupLayout()
+	private void setupLayout()
 	{
 		/**
 		 * The are of the 
@@ -73,6 +71,8 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, chatButton, 0, SpringLayout.EAST, chatArea);
 		appLayout.putConstraint(SpringLayout.WEST, chatArea, 25, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.EAST, chatArea, -25, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, inputField);
+		appLayout.putConstraint(SpringLayout.SOUTH, infoLabel, -6, SpringLayout.NORTH, inputField);
 	}
 	public void setupListeners()
 	{
@@ -109,7 +109,7 @@ public class ChatPanel extends JPanel
 		chatScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		chatScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		chatArea.setLineWrap(true);
-		chatArea.setEditable(false);
+		chatArea.setWrapStyleWord(false);
 	}
 	
 }

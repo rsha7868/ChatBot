@@ -148,15 +148,15 @@ public class Chatbot
 	
 	
 	
-	public boolean htmlTagChecker(String input)
-	{
-		
-		boolean containsHTML = false;
-		if(input == null || !input.contains("<"))
-		{
-			return containsHTML
-		}
-	}
+//	public boolean htmlTagChecker(String input)
+//	{
+//		
+//		boolean containsHTML = false;
+//		if(input == null || !input.contains("<"))
+//		{
+//			return containsHTML
+//		}
+//	}
 	
 	public boolean userNameChecker(String input)
 	{
