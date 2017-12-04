@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 public class ChatPanel extends JPanel
 {
@@ -22,6 +23,7 @@ public class ChatPanel extends JPanel
 	private SpringLayout appLayout;
 	private JButton checkerButton;
 	private JLabel infoLabel;
+	private JScrollPane chatScrollPane;
 	
 	public ChatPanel(ChatbotController appController)
 	{
@@ -38,13 +40,14 @@ public class ChatPanel extends JPanel
 		infoLabel = new JLabel("Type to chat with chatbot");
 		appLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, inputField);
 		appLayout.putConstraint(SpringLayout.SOUTH, infoLabel, -6, SpringLayout.NORTH, inputField);
-		
+		chatScrollPane = new JScrollPane();
+		checkerButton = new JButton("Check contents");
 					
 		setupPanel();
 		setupLayout();
 		setupListeners();
 		setupChatFrame();
-		
+		setupScrollPane();
 	}
 	public void setupPanel()
 	{
@@ -56,6 +59,7 @@ public class ChatPanel extends JPanel
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
 		this.add(infoLabel);
+		this.add(chatScrollPane);
 	}
 	public void setupLayout()
 	{
@@ -98,6 +102,14 @@ public class ChatPanel extends JPanel
 	public void setupChatFrame()
 	{
 		
+	}
+	private void setupScrollPane()
+	{
+		chatScrollPane.setViewportView(chatArea);
+		chatScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		chatScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		chatArea.setLineWrap(true);
+		chatArea.setEditable(false);
 	}
 	
 }
