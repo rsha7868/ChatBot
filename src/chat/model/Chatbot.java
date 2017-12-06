@@ -148,15 +148,46 @@ public class Chatbot
 	
 	
 	
-//	public boolean htmlTagChecker(String input)
-//	{
-//		
-//		boolean containsHTML = false;
-//		if(input == null || !input.contains("<"))
-//		{
-//			return containsHTML
-//		}
-//	}
+	public boolean htmlTagChecker(String input)
+	{
+		
+		boolean containshtml = false;
+		if(input == null || !input.contains("<"))
+		{
+			return containshtml;
+		}
+		int firstOpen = input.indexOf("<");
+		int firstClose = input.indexOf(">");
+		int secondOpen = -9;
+		int secondClose = -9;
+		String tagText = "";
+		
+		//Check bad tags
+		
+		if(input.contains("<>") || input.indexOf("< >") > -1)
+		{
+			containshtml = true;
+		}
+		// Check singleton
+		if(input.toUpperCase().contains("<P>") || input.toLowerCase().contains("<bv>"))
+		{
+			containshtml = true;
+		}
+		//Check others
+		else if(firstClose > firstOpen)
+		{
+			//Others
+			tagText = input.substring(firstOpen + 1, firstClose).toLowerCase();
+			secondOpen = input.toLowerCase().indexOf("</" + tagText, firstClose);
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 	public boolean userNameChecker(String input)
 	{
@@ -172,14 +203,14 @@ public class Chatbot
 	{
 		for(int index = 0; index < cuteAnimalMemes.size(); index++)
 		{
-			if(cuteAnimalMemes.contains(cuteAnimalMemes.get(index))
-					{
-						return true;
-					}
-			else if()
-			return false;
+			if(cuteAnimalMemes.contains(cuteAnimalMemes.get(index)))
+			{
+				return true;
+			}
 		}
+			return false;
 	}
+	
 	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
