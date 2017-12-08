@@ -47,6 +47,9 @@ public class ChatPanel extends JPanel
 		setupChatFrame();
 		setupScrollPane();
 	}
+	/**
+	 * Setup Panel for what the design is
+	 */
 	public void setupPanel()
 	{
 		this.setBackground(Color.GREEN);
@@ -62,7 +65,7 @@ public class ChatPanel extends JPanel
 	private void setupLayout()
 	{
 		/**
-		 * The are of the 
+		 * They are the code to put the area of the panel in the design... 
 		 */
 		appLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, chatButton);
 		appLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, chatArea);
@@ -74,6 +77,9 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, inputField);
 		appLayout.putConstraint(SpringLayout.SOUTH, infoLabel, -6, SpringLayout.NORTH, inputField);
 	}
+	/**
+	 * this is where the bot talks to us in the listener tools...
+	 */
 	public void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
@@ -99,10 +105,16 @@ public class ChatPanel extends JPanel
 			});
 			
 	}
+	/**
+	 * The framework of the panel 
+	 * */
 	public void setupChatFrame()
 	{
 		
 	}
+	/**
+	 * To scroll the data up and down in the view text box.
+	 */
 	private void setupScrollPane()
 	{
 		chatScrollPane.setViewportView(chatArea);

@@ -120,7 +120,7 @@ public class Chatbot
 		response += questions[random];
 		
 		random = (int) (Math.random() * 2);
-		
+		{
 			if (random % 2 == 0)
 			{
 				random = (int) (Math.random() * shoppingList.size());
@@ -142,7 +142,7 @@ public class Chatbot
 					response += followUps[3] + "\n";
 					response += followUps[4] + "\n";
 			}
-		
+		}
 		
 		return response;
 	}

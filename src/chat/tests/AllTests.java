@@ -8,5 +8,5 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({ ChatbotTest.class, ControllerTest.class, FrameTest.class, MovieTest.class, PanelTest.class })
 public class AllTests
 {
-
+	
 }
