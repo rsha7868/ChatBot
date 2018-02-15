@@ -21,6 +21,10 @@ public class ChatbotController
 		display = new PopupDisplay();
 		appFrame = new ChatFrame(this);
 	}
+	public void handleErrors(Exception error)
+	{
+		display.displayText(error.getMessage());
+	}
 	public void start()
 	{
 	display.displayText("welcome to Chatbot");
