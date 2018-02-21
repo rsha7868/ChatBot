@@ -24,12 +24,12 @@ public class Chatbot
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
 		this.currentTime = LocalTime.now();
-		this.questions = new String [3];
+		this.questions = new String [4];
 		this.username = username;
 		this.content = null;
 		this.intro = null;
 		this.topics = new String [3];
-		this.verbs = new String [4];
+		this.verbs = new String [5];
 		this.followUps = null;
 	
 	buildVerbs();
@@ -39,6 +39,15 @@ public class Chatbot
 	buildTopics();
 	buildChatbotResponse();
 	buildcuteAnimalMemes();
+	buildFollowUps();
+	}
+	private void buildFollowUps()
+	{
+		followUps[0] = "This";
+		followUps[1] = "is";
+		followUps[2] = "how";
+		followUps[3] = "to";
+		followUps[4] = "live";
 	}
 	private void buildVerbs()
 	{
@@ -46,6 +55,7 @@ public class Chatbot
 		verbs[1] = "dislike";
 		verbs[2] = "am ambivalent about";
 		verbs[3] = "am thinking about";
+		verbs[4] = "are you";
 	}
 	private void buildMovieList()
 	{
@@ -58,6 +68,7 @@ public class Chatbot
 		shoppingList.add("snacks");
 		shoppingList.add("veggies");
 		shoppingList.add("protein");
+		shoppingList.add("carbs");
 	}
 	private void buildTopics()
 	{
@@ -78,6 +89,7 @@ public class Chatbot
 		questions[0] = ("Who are you?");
 		questions[1] = ("Who are people?");
 		questions[2] = ("Do you hate Cats?");
+		questions[3] = ("Do you Know things?");
 	}
 	
 	public String processConversation(String input)
@@ -113,7 +125,7 @@ public class Chatbot
 		
 		response += verbs[random];
 		
-		random = (int) (Math.random() * topics.length);
+		random = (int) (Math.random() * shoppingList.size());
 		response += "" + topics[random] + ".\n";
 		
 		random = (int) (Math.random() * questions.length);
@@ -182,6 +194,7 @@ public class Chatbot
 			tagText = input.substring(firstOpen + 1, firstClose).toLowerCase();
 			secondOpen = input.toLowerCase().indexOf("</" + tagText, firstClose);
 		}
+		return false;
 		
 	}
 	

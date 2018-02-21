@@ -25,7 +25,7 @@ public class Movie
 
 	public String getTitle()
 	{
-		for(int ; )
+		return title;
 	}
 
 	public String getGenre()

@@ -10,7 +10,7 @@ import chat.model.CTECTwitter;
  */
 public class ChatbotController
 	{
-	private CTECTwitter;
+	private CTECTwitter myTwitter;
 	private Chatbot chatbot;
 	private PopupDisplay display;
 	private ChatFrame appFrame;
@@ -32,7 +32,7 @@ public class ChatbotController
 	}
 	public void tweet(String text)
 	{
-		myTwitter,sendTweet(text);
+		myTwitter.sendTweet(text);
 	}
 	
 //	while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
