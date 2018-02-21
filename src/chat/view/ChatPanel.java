@@ -108,8 +108,38 @@ public class ChatPanel extends JPanel
 					inputField.setText("");
 				}
 			});
+		tweetButton.addActionListener(new ActionListener()
+				{
+			public void actionPerformed(ActionEvent click)
+			{
+				appController.tweet(inputField.getText());
+			}
+				});
+		saveButton.addActionListener(new ActionListener()
+				{
+				public void actionPerformed(ActionEvent click)
+				{
+				
+				}
+			});
+		loadButton.addActionListener(new ActionListener()
+			{
+			public void actionPerformed(ActionEvent click)
+			{
+		
+			}
+			});
+		searchButton.addActionListener(new ActionListener()
+			{
+				public void actionPerformed(ActionEvent click)
+				{
+		
+				}
+			});
+		
+		
 			
-	}
+		}
 	/**
 	 * The framework of the panel 
 	 * */
