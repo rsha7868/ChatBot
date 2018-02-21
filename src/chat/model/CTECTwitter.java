@@ -4,24 +4,25 @@ import chat.controller.ChatbotController;
 
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
-import twitter4j.twitter;
+import twitter4j.Twitter;
 import twitter4j.Status;
 
 
 
 public class CTECTwitter
 {
-private ChatbotController app Controller;
+private ChatbotController appController;
 private Twitter chatbotTwitter;
 
 public CTECTwitter(ChatbotController appController)
 	{
-	this.appController = app Controller;
+	this.appController = appController;
 	this.chatbotTwitter = TwitterFactory.getSingleton();
 	}
-}
 
-public void sendTweet(String textToTweet)
-{
+
+	public void sendTweet(String textToTweet)
+	{
 	
+	}
 }

@@ -2,7 +2,7 @@ package chat.controller;
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
 import chat.view.PopupDisplay;
-
+import chat.model.CTECTwitter;
 /**
  * Manages the Chatbot application including the model and frame of the View package.
  * @author Ryan.Sharp
@@ -10,6 +10,7 @@ import chat.view.PopupDisplay;
  */
 public class ChatbotController
 	{
+	private CTECTwitter;
 	private Chatbot chatbot;
 	private PopupDisplay display;
 	private ChatFrame appFrame;
@@ -28,6 +29,10 @@ public class ChatbotController
 	public void start()
 	{
 	display.displayText("welcome to Chatbot");
+	}
+	public void tweet(String text)
+	{
+		myTwitter,sendTweet(text);
 	}
 	
 //	while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
