@@ -1,21 +1,21 @@
 package chat.view;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout;
-import javax.swing.JTextArea;
+import javax.swing.*;
+
 import chat.controller.ChatbotController;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
+
 
 public class ChatPanel extends JPanel
 {
 	/**
 	 * The extend values.
 	 */
+	private JButton loadButton; 
+	private JButton saveButton;
+	private JButton tweetButton;
+	private JButton searchButton;
 	private ChatbotController appController;
 	private JButton chatButton;
 	private JTextField inputField;
@@ -32,7 +32,12 @@ public class ChatPanel extends JPanel
 		 */
 		//Initialize GUI data members
 		super();
-		chatButton = new JButton("chat");
+		
+		chatButton = new JButton("chat", new ImageIcon(getClass().getResource("/chat/view/images/Chat.png")));
+		loadButton = new JButton("chat", new ImageIcon(getClass().getResource("/chat/view/images/Load.png")));
+		saveButton = new JButton("chat", new ImageIcon(getClass().getResource("/chat/view/images/Save.png")));
+		tweetButton = new JButton("chat", new ImageIcon(getClass().getResource("/chat/view/images/Tweet.png")));
+		searchButton = new JButton("chat", new ImageIcon(getClass().getResource("/chat/view/images/Search.png")));
 		chatArea = new JTextArea(10, 25);
 		chatArea.setBackground(Color.WHITE);
 		inputField = new JTextField(20);
