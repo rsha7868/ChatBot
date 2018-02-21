@@ -34,15 +34,29 @@ public class ChatPanel extends JPanel
 		super();
 		
 		chatButton = new JButton("chat", new ImageIcon(getClass().getResource("/chat/view/images/Chat.png")));
-		loadButton = new JButton("chat", new ImageIcon(getClass().getResource("/chat/view/images/Load.png")));
-		saveButton = new JButton("chat", new ImageIcon(getClass().getResource("/chat/view/images/Save.png")));
-		tweetButton = new JButton("chat", new ImageIcon(getClass().getResource("/chat/view/images/Tweet.png")));
-		searchButton = new JButton("chat", new ImageIcon(getClass().getResource("/chat/view/images/Search.png")));
+		loadButton = new JButton("load", new ImageIcon(getClass().getResource("/chat/view/images/Load.png")));
+		saveButton = new JButton("save", new ImageIcon(getClass().getResource("/chat/view/images/Save.png")));
+		tweetButton = new JButton("tweet", new ImageIcon(getClass().getResource("/chat/view/images/Tweet.png")));
+		searchButton = new JButton("search", new ImageIcon(getClass().getResource("/chat/view/images/Search.png")));
 		chatArea = new JTextArea(10, 25);
 		chatArea.setBackground(Color.WHITE);
 		inputField = new JTextField(20);
 		appLayout  = new SpringLayout();
+		appLayout.putConstraint(SpringLayout.NORTH, searchButton, 0, SpringLayout.NORTH, loadButton);
+		appLayout.putConstraint(SpringLayout.WEST, searchButton, 0, SpringLayout.WEST, saveButton);
+		appLayout.putConstraint(SpringLayout.EAST, searchButton, -6, SpringLayout.WEST, loadButton);
+		appLayout.putConstraint(SpringLayout.EAST, tweetButton, -6, SpringLayout.WEST, chatButton);
+		appLayout.putConstraint(SpringLayout.NORTH, chatButton, 40, SpringLayout.SOUTH, chatArea);
+		appLayout.putConstraint(SpringLayout.NORTH, saveButton, 6, SpringLayout.SOUTH, tweetButton);
+		appLayout.putConstraint(SpringLayout.NORTH, tweetButton, 0, SpringLayout.NORTH, chatButton);
+		appLayout.putConstraint(SpringLayout.WEST, saveButton, 396, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.EAST, chatButton, 0, SpringLayout.EAST, saveButton);
+		appLayout.putConstraint(SpringLayout.NORTH, loadButton, 6, SpringLayout.SOUTH, saveButton);
+		appLayout.putConstraint(SpringLayout.WEST, loadButton, 211, SpringLayout.EAST, inputField);
+		appLayout.putConstraint(SpringLayout.EAST, saveButton, 0, SpringLayout.EAST, loadButton);
 		infoLabel = new JLabel("Type to chat with chatbot");
+		appLayout.putConstraint(SpringLayout.SOUTH, infoLabel, -64, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, inputField, 6, SpringLayout.SOUTH, infoLabel);
 		chatScrollPane = new JScrollPane();
 		checkerButton = new JButton("Check contents");
 					
@@ -50,13 +64,17 @@ public class ChatPanel extends JPanel
 		setupLayout();
 		setupListeners();
 		setupChatFrame();
-		setupScrollPane();
+//		setupScrollPane();
 	}
 	/**
 	 * Setup Panel for what the design is
 	 */
 	public void setupPanel()
 	{
+		this.add(saveButton);
+		this.add(loadButton);
+		this.add(tweetButton);
+		this.add(searchButton);
 		this.setBackground(Color.GREEN);
 		this.setLayout(appLayout);
 		this.add(chatButton);
@@ -69,18 +87,11 @@ public class ChatPanel extends JPanel
 	}
 	private void setupLayout()
 	{
-		/**
-		 * They are the code to put the area of the panel in the design... 
-		 */
-		appLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, chatButton);
 		appLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, chatArea);
 		appLayout.putConstraint(SpringLayout.NORTH, chatArea, 20, SpringLayout.NORTH, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, chatButton, -10, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.EAST, chatButton, 0, SpringLayout.EAST, chatArea);
 		appLayout.putConstraint(SpringLayout.WEST, chatArea, 25, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.EAST, chatArea, -25, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, inputField);
-		appLayout.putConstraint(SpringLayout.SOUTH, infoLabel, -6, SpringLayout.NORTH, inputField);
 	}
 	/**
 	 * this is where the bot talks to us in the listener tools...
@@ -150,13 +161,13 @@ public class ChatPanel extends JPanel
 	/**
 	 * To scroll the data up and down in the view text box.
 	 */
-	private void setupScrollPane()
-	{
-		chatScrollPane.setViewportView(chatArea);
-		chatScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		chatScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-		chatArea.setLineWrap(true);
-		chatArea.setWrapStyleWord(false);
-	}
+//	private void setupScrollPane()
+//	{
+//		chatScrollPane.setViewportView(chatArea);
+//		chatScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+//		chatScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+//		chatArea.setLineWrap(true);
+//		chatArea.setWrapStyleWord(false);
+//	}
 	
 }
