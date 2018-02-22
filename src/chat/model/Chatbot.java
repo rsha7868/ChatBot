@@ -30,7 +30,7 @@ public class Chatbot
 		this.intro = null;
 		this.topics = new String [3];
 		this.verbs = new String [5];
-		this.followUps = null;
+		this.followUps = new String[5];
 	
 	buildVerbs();
 	buildShoppingList();
