@@ -13,7 +13,7 @@ public class CTECTwitter
 {
 private ChatbotController appController;
 private Twitter chatbotTwitter;
-private List<Status> searchTweets;
+private List<Status> searchedTweets;
 private List<String> tweetedWords;
 private long totalWordCount;
 
@@ -22,7 +22,7 @@ public CTECTwitter(ChatbotController appController)
 	this.appController = appController;
 	this.chatbotTwitter = TwitterFactory.getSingleton();
 	this.tweetedWords = new ArrayList<String>();
-	this.searchTweets = new ArrayList<String>();
+	this.searchedTweets = new ArrayList<Status>();
 	this.totalWordCount = 0;
 	}
 
