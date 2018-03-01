@@ -79,4 +79,9 @@ public class ChatbotController
 		//continue with all checkers except length and quit checker
 		return response;
 	}
+	public String search(String text)
+	{
+		return myTwitter.getMostCommonWord(text);
 	}
+	}
+
