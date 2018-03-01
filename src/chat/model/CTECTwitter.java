@@ -54,7 +54,7 @@ public CTECTwitter(ChatbotController appController)
 	}
 	private void collectTweets(String username)
 	{
-		searchTweets.clear();
+		searchedTweets.clear();
 		tweetedWords.clear();
 		
 		Paging statusPage = new Paging(1,100);
@@ -71,7 +71,7 @@ public CTECTwitter(ChatbotController appController)
 				{
 					if(current.getId() < lastID)
 					{
-						searchTweets.add(current);
+						searchedTweets.add(current);
 						lastID = current.getId();
 					}
 				}
@@ -85,7 +85,7 @@ public CTECTwitter(ChatbotController appController)
 	}
 	private void turnStatusesToWords()
 	{
-		for(Status currentStatus : searchTweets)
+		for(Status currentStatus : searchedTweets)
 		{
 			String tweetText = currentStatus.getText();
 			String [] tweetWords = tweetText.split(" ");
