@@ -82,5 +82,16 @@ public CTECTwitter(ChatbotController appController)
 			page++;
 		}
 	}
-	
+	private void turnStatusesToWords()
+	{
+		for(Status currentStatus : searchTweets)
+		{
+			String tweetText = currentStatus.getText();
+			String [] tweetWords = tweetText.split(" ");
+			for(int index = 0; index < tweetedWords.length;index++)
+			{
+				tweetedWords.add(removePunctuation(tweetWords[index]).trim());
+			}
+		}
+	}
 }
