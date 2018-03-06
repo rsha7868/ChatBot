@@ -17,7 +17,7 @@ public class ChatbotController
 	
 	
 	public ChatbotController()
-{
+	{
 		chatbot = new Chatbot("Ryan Sharp");
 		display = new PopupDisplay();
 		appFrame = new ChatFrame(this);
@@ -83,5 +83,5 @@ public class ChatbotController
 	{
 		return myTwitter.getMostCommonWord(text);
 	}
-	}
+}
 

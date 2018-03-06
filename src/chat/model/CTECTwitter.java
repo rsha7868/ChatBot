@@ -50,6 +50,8 @@ public CTECTwitter(ChatbotController appController)
 		turnStatusesToWords();
 		totalWordCount = tweetedWords.size();
 		String [] boring = createIgnoredWordArray();
+		trimTheBoringWords(boring);
+		
 		return mostCommon;
 	}
 	private void collectTweets(String username)
@@ -138,5 +140,19 @@ public CTECTwitter(ChatbotController appController)
 		
 		wordScanner.close();
 		return boringWords;
+	}
+	private void trimTheBoringWords(String [] boringWords)
+	{
+		for(int index = tweetedWords.size() - 1; index >= 0; index--)
+		{
+			for(int removeIndex = 0; removeIndex < boringWords.length; removeIndex++)
+			{
+				if(tweetedWords.get(index).equals(boringWords[removeIndex]))
+				{
+					tweetedWords.remove(index);
+					removeIndex = boringWords.length;
+				}
+			}
+		}
 	}
 }
