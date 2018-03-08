@@ -16,6 +16,7 @@ private Twitter chatbotTwitter;
 private List<Status> searchedTweets;
 private List<String> tweetedWords;
 private long totalWordCount;
+private HashMap<String, Integer> wordsAndCount; 
 
 public CTECTwitter(ChatbotController appController)
 	{
@@ -90,6 +91,7 @@ public CTECTwitter(ChatbotController appController)
 		for(Status currentStatus : searchedTweets)
 		{
 			String tweetText = currentStatus.getText();
+			tweetText = tweetText.replace("\n", " ");
 			String [] tweetWords = tweetText.split(" ");
 			for(int index = 0; index < tweetedWords.length;index++)
 			{
