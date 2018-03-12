@@ -25,6 +25,7 @@ public CTECTwitter(ChatbotController appController)
 	this.tweetedWords = new ArrayList<String>();
 	this.searchedTweets = new ArrayList<Status>();
 	this.totalWordCount = 0;
+	this.wordsAndCount = new HashMap<String, Integer>();
 	}
 
 
@@ -55,14 +56,14 @@ public CTECTwitter(ChatbotController appController)
 		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
 		
 		String mostCommonWord = sorted.get(0).getKey();
-		int mostWord = 0;
+		int maxWord = 0;
 		maxWord = sorted.get(0).getValue();
 		
 		mostCommon = "The most common word in " + username + "'s "+ searchedTweets.size() + " tweets is " +
 		mostCommonWord + ", and it was used " + maxWord + "times.\nThis is " +
 				(DecimalFormat.getPercentInstance().format(((double) maxWord)/totalWordCount)) +
 				" of total words: " + totalWordCount + " and is " +
-				(decimalForamt.getPercentInstance().format((((double)maxWord)/wordsAndCount.size())) +
+				(DecimalFormat.getPercentInstance().format((((double) maxWord)/wordsAndCount.size())) +
 						" of the unique words; " + wordsAndCount.size();
 				
 		return mostCommon;
