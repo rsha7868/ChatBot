@@ -52,7 +52,19 @@ public CTECTwitter(ChatbotController appController)
 		totalWordCount = tweetedWords.size();
 		String [] boring = createIgnoredWordArray();
 		trimTheBoringWords(boring);
+		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
 		
+		String mostCommonWord = sorted.get(0).getKey();
+		int mostWord = 0;
+		maxWord = sorted.get(0).getValue();
+		
+		mostCommon = "The most common word in " + username + "'s "+ searchedTweets.size() + " tweets is " +
+		mostCommonWord + ", and it was used " + maxWord + "times.\nThis is " +
+				(DecimalFormat.getPercentInstance().format(((double) maxWord)/totalWordCount)) +
+				" of total words: " + totalWordCount + " and is " +
+				(decimalForamt.getPercentInstance().format((((double)maxWord)/wordsAndCount.size())) +
+						" of the unique words; " + wordsAndCount.size();
+				
 		return mostCommon;
 	}
 	private void collectTweets(String username)
@@ -90,8 +102,8 @@ public CTECTwitter(ChatbotController appController)
 	{
 		for(Status currentStatus : searchedTweets)
 		{
-			String tweetText = currentStatus.getText();
-			tweetText = tweetText.replace("\n", " ");
+			String tweetText = currentStatus.getText().toLowerCase();
+			tweetText = tweetText.replace("\n", "  ");
 			String [] tweetWords = tweetText.split(" ");
 			for(int index = 0; index < tweetedWords.length;index++)
 			{
@@ -149,7 +161,7 @@ public CTECTwitter(ChatbotController appController)
 		{
 			for(int removeIndex = 0; removeIndex < boringWords.length; removeIndex++)
 			{
-				if(tweetedWords.get(index).equals(boringWords[removeIndex]))
+				if(tweetedWords.get(index).equalsIgnoreCase(boringWords[removeIndex]))
 				{
 					tweetedWords.remove(index);
 					removeIndex = boringWords.length;
@@ -180,5 +192,12 @@ public CTECTwitter(ChatbotController appController)
 				wordsAndCount.replace(word.toLowerCase(), wordsAndCount.get(word.toLowerCase()) + 1);
 			}
 		}
+	}
+	private ArrayList<Map.Entry<String, Integer>> sortHashMap()
+	{
+		ArrayList<Map.Entry<String, Integer>> entries = new ArrayList<Map.Entry<String, Integer>>(wordsAndCount.entrySet());
+		entries.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+		
+		return entries;
 	}
 }
