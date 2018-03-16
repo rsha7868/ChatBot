@@ -233,4 +233,35 @@ public CTECTwitter(ChatbotController appController)
 		}
 		return allWords;
 	}
+	public String analyzeTwitterForTopic(String topic)
+	{
+		String results = "";
+		searchTweet.clear();
+		Query twitterQuery = new Query(topic);
+		int resultMax = 750;
+		long lastId = Long.MAX_VALUE;
+		//Location of Six Flags Magic Mountain
+		twitterQuery.setGeoCode(new GeoLocation(34.4241832,-118.5960324), 2.5, Query.MEASUREMENT);
+		ArrayList<Status> matchingTweets = new ArrayList<Status>();
+		while(searchedTweets.size() < resultMax)
+		{
+			try
+			{
+				QueryResult resultTweets = chatbotTwitter.search(twitterQuery);
+			}
+			catch(TwitterException error)
+			{
+				appController.handleErrors(error);
+			}
+			
+			twitterQuery.setMaxId(lastId - 1);
+		}
+		results += "Talk about the seach results";
+		results += "find a tweet that pass one of the checkers in chatbot";
+		
+		int randomTweet = (int) (Math.random() * matchingTweets.size());
+		results += matchingTweets.get(randomTweet);
+		
+		return results;
+	}
 }
