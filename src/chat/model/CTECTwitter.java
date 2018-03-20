@@ -236,12 +236,14 @@ public CTECTwitter(ChatbotController appController)
 	public String analyzeTwitterForTopic(String topic)
 	{
 		String results = "";
-		searchTweet.clear();
+		searchedTweets.clear();
 		Query twitterQuery = new Query(topic);
 		int resultMax = 750;
 		long lastId = Long.MAX_VALUE;
 		//Location of Six Flags Magic Mountain
-		twitterQuery.setGeoCode(new GeoLocation(34.4241832,-118.5960324), 2.5, Query.MEASUREMENT);
+		twitterQuery.setGeoCode(new GeoLocation(34.4241832,-118.5960324), 2.5, Query.MILES);
+		twitterQuery.setLang("English");
+		twitterQuery.setSince("2018-01-01");
 		ArrayList<Status> matchingTweets = new ArrayList<Status>();
 		while(searchedTweets.size() < resultMax)
 		{
