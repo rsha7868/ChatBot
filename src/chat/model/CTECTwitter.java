@@ -1,5 +1,5 @@
 package chat.model;
-//import chat.controller.IOController;
+import chat.controller.IOController;
 import chat.controller.ChatbotController;
 
 
@@ -61,10 +61,10 @@ public CTECTwitter(ChatbotController appController)
 		
 		mostCommon = "The most common word in " + username + "'s "+ searchedTweets.size() + " tweets is " +
 		mostCommonWord + ", and it was used " + maxWord + "times.\nThis is " +
-				(DecimalFormat.gebbtPercentInstance().format(((double) maxWord)/totalWordCount)) +
+				(DecimalFormat.getPercentInstance().format(((double) maxWord)/totalWordCount)) +
 				" of total words: " + totalWordCount + " and is " +
 				(DecimalFormat.getPercentInstance().format((((double) maxWord)/wordsAndCount.size())) +
-						" of the unique words; " + wordsAndCount.size();
+						" of the unique words; " + wordsAndCount.size());
 				mostCommon += "\n\n" + sortedWords();
 				
 		return mostCommon;
@@ -107,7 +107,7 @@ public CTECTwitter(ChatbotController appController)
 			String tweetText = currentStatus.getText().toLowerCase();
 			tweetText = tweetText.replace("\n", "  ");
 			String [] tweetWords = tweetText.split(" ");
-			for(int index = 0; index < tweetedWords.length;index++)
+			for(int index = 0; index < tweetedWords.length; index++)
 			{
 				tweetedWords.add(removePunctuation(tweetWords[index]).trim());
 			}
@@ -249,7 +249,7 @@ public CTECTwitter(ChatbotController appController)
 		{
 			try
 			{
-				QueryResult resultTweets = chatbotTwitter.search(twitterQuery);
+				QueryResult resultTweets = chatbotTwitter.search(twitterQuery);	
 			}
 			catch(TwitterException error)
 			{
