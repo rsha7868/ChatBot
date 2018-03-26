@@ -249,7 +249,16 @@ public CTECTwitter(ChatbotController appController)
 		{
 			try
 			{
-				QueryResult resultTweets = chatbotTwitter.search(twitterQuery);	
+				QueryResult resultTweets = chatbotTwitter.search(twitterQuery);
+				
+				for(Status currentTweet : resultTweets.getTweets())
+				{
+					if(currentTweet.getId() < lastId)
+					{
+						matchingTweets.add(currentTweet);
+						lastId = currentTweet.getId();
+					}
+				}
 			}
 			catch(TwitterException error)
 			{
